@@ -104,6 +104,7 @@ class UniversityController extends Controller
         }
         
         $data = $validator->validated();
+        
 
         // Nếu có file ảnh mới được upload, xử lý tương tự như phần store
         if ($request->hasFile('image')) {

@@ -10,11 +10,7 @@ class FacultyController extends Controller
 {
     public function index(Request $request)
     {
-        // Kiểm tra quyền của user (chỉ admin được truy cập)
-        if ($request->user()->role !== 'admin') {
-            return response()->json(['message' => 'Unauthorized'], 403);
-        }
-
+        
         // Lấy tất cả các khoa kèm theo thông tin của trường
         $faculties = Faculty::with('university')->get();
         return response()->json($faculties, 200);
