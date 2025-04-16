@@ -16,6 +16,8 @@ class University extends Model
         'updated_at'
     ];
 
+    protected $table = 'universities';
+
     public function faculties()
     {
         return $this->hasMany(Faculty::class);
