@@ -84,7 +84,9 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('/user/register', [UserAuthController::class, 'register']);
 Route::post('/user/login', [UserAuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/user/logout', [UserAuthController::class, 'logout']);
-
+Route::middleware('auth:sanctum')->group(function () {
+    Route::put('/user/change-password', [UserAuthController::class, 'changePassword']);
+});
 
 // User create topic
 Route::middleware('auth:sanctum')->group(function () {
