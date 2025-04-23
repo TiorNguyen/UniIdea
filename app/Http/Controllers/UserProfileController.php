@@ -21,6 +21,7 @@ class UserProfileController extends Controller
             'name'   => 'required|string|max:255',
             'phone'  => 'nullable|string|max:20',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'description' => 'nullable|string|max:255'
         ]);
 
         if ($validator->fails()) {
